@@ -1,0 +1,11 @@
+# Ignore all checkpoints folders
+**/.ipynb_checkpoints/
+
+# Ignore data files
+*.csv
+*.zip
+
+# Ignore data folder
+data/
+
+
