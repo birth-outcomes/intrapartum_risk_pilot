@@ -1,7 +1,7 @@
 Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N=no)",Field type,Criteria for inclusion in study,Missing value criteria,Discrepant values,Recoded variable name,Recoded variable values
 1,RECORDNO,,Oracle record number,Y,Numeric,,,,,
 2,HOSPITAL,,SMMIS hospital code number of birth,Y,Numeric,,,,,
-3,HOSPNAME,,Hospital name,N,Label,,,,,
+3,HOSPNAME,1,Hospital name,N,Label,,,,,
 4,YEAR,,Year of record,Y,Numeric,,,,,
 5,ED91,,Enumeration district of residence,N,Label,,,,,
 6,CRSTAIRS,,Carstair's deprivation index,Y,Numeric,,,,,
@@ -12,8 +12,8 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 11,RECSTAT,,Record status,N,Label,,,,,
 12,PREGOCC,,Pregnancy occurrence,N,Label,,,,,
 13,BOOKSTAT,,Booking status,N,Label,,,,,
-14,RECDAT,,Date record created (DDMMYY),N,Date,,,,,
-15,MDOB,,Mothers date of birth (DDMMYY),Y,Date,,,,,
+14,RECDAT,1,Date record created (DDMMYY),N,Date,,,,,
+15,MDOB,1,Mothers date of birth (DDMMYY),Y,Date,,,,,
 16,MARITAL,,"Marital status (M=married, N=never married, D=divorced, S=separated, W=widowed)",Y,Label,,"Recode other than M, N, D, S, W to missing ","2, U",MARITACD,"0=M=married, 1=N=never married, 2=D=divorced, 3=S=separated, 4=W=widowed"
 17,CATEGORY,,"Patient category (N=normal, P=private, A=amenity, O=overseas visitor)",Y,Label,,"Recode other than N, P, A, O to missing ",M,CATEGOCD,"0=N=normal, 1=P=private, 2=A=amenity, 3=O=overseas visitor, 9=missing"
 18,DISTRES,,District of residence,N,Label,,,,,
@@ -26,22 +26,22 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 25,HYPERTE,,"Hypertension at any time (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,HYPERTCD,"0=N=no, 1=Y=yes"
 26,BLDTRANS,,"Previous blood transfusion (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",R,BLDTRACD,"0=N=no, 1=Y=yes, 9=missing"
 27,BOOKCMP,,"Other booking complications (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ","E, P",BOOKCMCD,"0=N=no, 1=Y=yes, 9=missing"
-28,PARITY,,Parity of mother (=0 for first birth),Y,Numeric,PARITY = 0,,,,
+28,PARITY,1,Parity of mother (=0 for first birth),Y,Numeric,PARITY = 0,,,,
 29,PREVLIVE,,Number of previous livebirths,N,Numeric,,,,,
 30,PRVSTILL,,Number of previous stillbirths,N,Numeric,,,,,
 31,PREVDTHS,,Number of previous deaths within 28 days of birth,N,Numeric,,,,,
-32,PREVCAES,,Number of previous Caesarians,N,Numeric,,,,,
+32,PREVCAES,1,Number of previous Caesarians,N,Numeric,,,,,
 33,PREVMISC,,Number of previous miscarriages,N,Numeric,,,,,
 34,PREVTERM,,Number of previous terminations,N,Numeric,,,,,
 35,LWEIGHT,,Weight of last infant at delivery (g),N,Numeric,,,,,
 36,LASTGEST,,Gestation of last infant at delivery (weeks),N,Numeric,,,,,
-37,LPERIOD,,Date of last menstrual period (DDMMYY),N,Date,,,,,
+37,LPERIOD,1,Date of last menstrual period (DDMMYY),N,Date,,,,,
 38,CERTLPRD,,"Certainty of last menstrual period (C=certain, U=uncertain, N=no idea)",Y,Label,,"Recode other than C, U, N to missing",,CERTLPCD,"0=C=certain, 1=U=uncertain, 2=N=no idea, 9=missing"
 39,REGULAR,,"Regularity of menstrual cycle (R=regular, I=irregular, A=amenorrhoea)",Y,Label,,"Recode other than R, I, A to missing",,REGULACD,"0=R=regular, 1=I=irregular, 2=A=amenorrhoea"
 40,EDDLMP,,Estimated date of delivery by date of last menstrual period,N,Date,,,,,
 41,FIRSTAN,,Date of first antenatal visit (DDMMYY),N,Date,,,,,
-42,MHEIGHT,,Maternal height (cm),Y,Numeric,,,,,
-43,MWEIGHT,,Maternal weight at booking (kg),Y,Numeric,,Recode < 30 or > 200 to missing ,"0-29,>200",,
+42,MHEIGHT,1,Maternal height (cm),Y,Numeric,,,,,
+43,MWEIGHT,1,Maternal weight at booking (kg),Y,Numeric,,Recode < 30 or > 200 to missing ,"0-29,>200",,
 44,MBOOKBP,,Maternal diastolic blood pressure at booking,Y,Numeric,,Recode < 30 to missing,0-29,,
 45,INTPLAE,,"Intended place of delivery (T=this hospital, O=other hospital, H=home, N=none, U=unbooked)",Y,Label,,"Recode other than T, O, H, N, U to missing",,INTPLACD,"0=T=this hospital, 1=O=other hospital, 2=H=home, 3=N=none, 4=U=unbooked"
 46,INTCARE,,Intended place of antenatal care (hospital specific),N,Label,,,,,
@@ -83,7 +83,7 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 82,LOWHB,,Lowest antenatal haemoglobin level (numeric or NONE),Y,Numeric,,Recode < 4 or > 22 to missing,"0-3,>22",,
 83,ANBTRANS,,Number of antenatal blood transfusions given,Y,Numeric,,,,,
 84,CXSUTURE,,"Cervical suture (Y=yes, N=no)",N,Label,,,,,
-85,NOSCANS,,Number of ultrasound scans given,Y,Numeric,,,,,
+85,NOSCANS,1,Number of ultrasound scans given,Y,Numeric,,,,,
 86,NOANC,,Number of antenatal clinic visits,Y,Numeric,,,,,
 87,ANMANAGE,,Antenatal management (hospital specific),N,Label,,,,,
 88,MEDIC,,"Medication given (S=steroids, O=other, N=none)",N,Label,,,,,
@@ -97,17 +97,17 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 96,DATCOMP,,Date pregnancy ended (DDMMYY),N,Date,,,,,
 97,NOINFANT,,Number of infants delivered,Y,Numeric,NOINFANT = 1,,,,
 98,SPARENT,,"Single unsupported mother (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,SPARENCD,"0=N=no, 1=Y=yes"
-99,ONSETLA,,"Labour onset (S=spontaneous, I=induction, N=none)",Y,Label,,"Recode other than S, I, N to missing ",E,ONSETLCD,"0=S=spontaneous, 1=I=induction, 2=N=none, 9=missing"
+99,ONSETLA,1,"Labour onset (S=spontaneous, I=induction, N=none)",Y,Label,,"Recode other than S, I, N to missing ",E,ONSETLCD,"0=S=spontaneous, 1=I=induction, 2=N=none, 9=missing"
 100,AUGMENT,,"Augmentation (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",A,AUGMENCD,"0=N=no, 1=Y=yes, 9=missing"
 101,DAT1STG,,Date of onset of 1st stage of labour (DDMMYY),N,Date,,,,,
 102,TIM1STG,,Time of 1st stage of labour (HHMM),N,Numeric,,,,,
 103,DAT2STG,,Date of onset of 2nd stage of labour (DDMMYY),N,Date,,,,,
 104,TIM2STG,,Time of 2nd stage of labour (HHMM),N,Numeric,,,,,
-105,ANALAB,,"Analgesia administered in labour (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
-106,ANALDEL,,"Analgesia administered in delivery (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
+105,ANALAB,1,"Analgesia administered in labour (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
+106,ANALDEL,1,"Analgesia administered in delivery (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
 107,ANALPDL,,"Analgesia administered post-delivery (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
-108,METHIND,,"Method of induction/augmentation (A=ARM, O=oxytocin, P=prostaglandins) (and combinations)",Y,Label,,"Recode other than A, O, P and combinations to missing","C, DO, EAO, EO, H, HO, IA, IO, N, NA, NAO, NO, NOA, NOP, NP, P1, PI, RO, Y, YOP",METHINCD,"0=A=ARM, 1=O=oxytocin, 2=P=prostaglandins, 3=AO, OA=ARM and oxytocin, 4=AP, PA=ARM and prostaglandins, 5=OP, PO=oxytocin and prostaglandins, 6=AOP, APO, OAP, OPA, PAO, POA=ARM, oxytocin and prostaglandins, 9=missing"
-109,PYREXIA,,"Pyrexia in labour of unknown cause (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,PYREXICD,"0=N=no, 1=Y=yes"
+108,METHIND,1,"Method of induction/augmentation (A=ARM, O=oxytocin, P=prostaglandins) (and combinations)",Y,Label,,"Recode other than A, O, P and combinations to missing","C, DO, EAO, EO, H, HO, IA, IO, N, NA, NAO, NO, NOA, NOP, NP, P1, PI, RO, Y, YOP",METHINCD,"0=A=ARM, 1=O=oxytocin, 2=P=prostaglandins, 3=AO, OA=ARM and oxytocin, 4=AP, PA=ARM and prostaglandins, 5=OP, PO=oxytocin and prostaglandins, 6=AOP, APO, OAP, OPA, PAO, POA=ARM, oxytocin and prostaglandins, 9=missing"
+109,PYREXIA,1,"Pyrexia in labour of unknown cause (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,PYREXICD,"0=N=no, 1=Y=yes"
 110,BLDLOSS,,Blood loss (ml),Y,Numeric,,Recode 9999 to missing,9999,,
 111,PERINEUM,,"State of perineum (I=intact, F=first degree tear, S=second degree tear, T=third degree tear, E=episiotomy) (and combinations)",Y,Label,,"Recode other than E, ES, ET, F, FE, I, S, SE, T, TE to missing",ST,PERINECD,"0=I=intact, 1=F=first degree tear, 2=S=second degree tear, 3=T=third degree tear, 4=E=episiotomy, 5=FE=first degree tear and episiotomy, 6=SE=second degree tear and episiotomy, 7=TE, ET=third degree tear and episiotomy"
 112,NONPERI,,"Non-perineal tear (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,NONPERCD,"0=N=no, 1=Y=yes"
@@ -156,9 +156,9 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 155,TIMRUP,,Time membranes ruptured (HHMM),N,Numeric,,Recode numbers HHMM with MM>59 to missing,,,
 156,PROLAPSE,,"Cord prolapse (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ","""",PROLAPCD,"0=N=no, 1=Y=yes, 9=missing"
 157,MANIPUL,,"Manipulation of fetus before delivery (N=no manipulation, V=vertex, B=breech, T=transverse/oblique, O=oblique, Z=other)",Y,Label,,"Recode other than N, V, B, T, O, Z to missing ",,MANIPUCD,"0=N=no manipulation, 1=V=vertex, 2=B=breech, 3=T=transverse/oblique, 4=O=oblique, 5=Z=other"
-158,CTG,,"Electronic fetal heart monitor (N=normal, A=abnormal, Z=not monitored)",Y,Label,,"Recode other than N, A, Z to missing ",,CTGCD,"0=N=normal, 1=A=abnormal, 2=Z=not monitored"
+158,CTG,1,"Electronic fetal heart monitor (N=normal, A=abnormal, Z=not monitored)",Y,Label,,"Recode other than N, A, Z to missing ",,CTGCD,"0=N=normal, 1=A=abnormal, 2=Z=not monitored"
 159,FETALPH,,Lowest fetal pH (numeric or NONE),Y,Numeric,,Recode > 14 to missing,>14,,
-160,MECONIUM,,"Meconium stained liquor (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,MECONICD,"0=N=no, 1=Y=yes, 9=missing"
+160,MECONIUM,1,"Meconium stained liquor (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,MECONICD,"0=N=no, 1=Y=yes, 9=missing"
 161,BIRTHDAT,,Infant's date of birth (DDMMYY),Y,Date,,,,,
 162,BIRTHTIM,,Infants time of birth (HHMM),N,Numeric,,,,,
 163,PLACDAT,,Date of delivery of placenta (DDMMYY),N,Date,,,,,
@@ -178,7 +178,7 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 177,BTHPOOL,,"Use of birth pool (N=not used, L=labour only, D=delivery only, B=both labour and delivery, U=unknown)",Y,Label,,"Recode other than N (n), L, D, B (b), U (u) to missing ","), ., /, ?, @, 0, 3, 7, 9, a, A, c, C, D, E, f, F, G< H, i, I, K, M, o, O, P, r, R, S, t, T, V, w, W, X, Y",BTHPOOCD,"0=N=not used, 1=L=labour only, 2=D=delivery only, 3=B=both labour and delivery, 4=U=unknown"
 178,INFETHNI,,"Infants's ethnic group (pre 1995) (C=Caucasian, A=Black African, W=Black Caribbean, I=Indo-Pakistani, O=Oriental, M=Mediterranean, Z=Other) (and combinations)",Y,Label,,"Recode other than C, A, W, I, O, M and Z (and post 1995 equivalents) to missing","&&&&, HISH, XGKC",,"0=C=Caucasian, 1=A=Black African, 2=W=Black Caribbean, 3=I=Indo-Pakistani, 4=O=Oriental, 5=M=Mediterranean, 6=Z=Other, 9=missing"
 179,APGAR1,,Apgar score at 1 minute,Y,Numeric,,,,,
-180,APGAR5,,Apgar score at 5 minutes,Y,Numeric,,,,,
+180,APGAR5,1,Apgar score at 5 minutes,Y,Numeric,,,,,
 181,ONSRESP,,Onset of regular respiration (minutes),Y,Numeric,,Recode > 60 to missing,>60,ONSRESCD,Numeric recoding
 182,RESUSPP,,"Resuscitation positive pressure (N=nil, M=mask, I=intubation, C=cardiac massage and intubation)",Y,Label,,"Recode other than N, M, I, C to missing ",Y,RESUSPCD,"0=N=nil, 1=M=mask, 2=I=intubation, 3=C=cardiac massage and intubation, 9=missing"
 183,RESUSDG,,"Resuscitation drugs used (N=none, X=naloxone, S=sodium bicarbonate, O=other)",Y,Label,,"Recode other than N, X, S, O to missing ",,RESUSDCD,"0=N=none, 1=X=naloxone, 2=S=sodium bicarbonate, 3=O=other"
