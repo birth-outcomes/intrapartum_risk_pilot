@@ -1,0 +1,305 @@
+Field #,Variable name,Description,"Used in preliminary data (Y=yes, N=no)",Field type,Criteria for inclusion in study,Missing value criteria,Discrepant values,Recoded variable name,Recoded variable values
+1,RECORDNO,Oracle record number,Y,Numeric,,,,,
+2,HOSPITAL,SMMIS hospital code number of birth,Y,Numeric,,,,,
+3,HOSPNAME,Hospital name,N,Label,,,,,
+4,YEAR,Year of record,Y,Numeric,,,,,
+5,ED91,Enumeration district of residence,N,Label,,,,,
+6,CRSTAIRS,Carstair's deprivation index,Y,Numeric,,,,,
+7,CRSQUINT,Carstair's deprivation quintile,Y,Numeric,,Recode >5 to missing,6,,
+8,MHOSPNUM,Mother's hospital number,N,Label,,,,,
+9,BIRTHORD,Birth order,N,Numeric,,,,,
+10,BIRTHMTH,Birth month (MM),Y,Numeric,,Recode < 1 or > 12 to missing ,99,,
+11,RECSTAT,Record status,N,Label,,,,,
+12,PREGOCC,Pregnancy occurrence,N,Label,,,,,
+13,BOOKSTAT,Booking status,N,Label,,,,,
+14,RECDAT,Date record created (DDMMYY),N,Date,,,,,
+15,MDOB,Mothers date of birth (DDMMYY),Y,Date,,,,,
+16,MARITAL,"Marital status (M=married, N=never married, D=divorced, S=separated, W=widowed)",Y,Label,,"Recode other than M, N, D, S, W to missing ","2, U",MARITACD,"0=M=married, 1=N=never married, 2=D=divorced, 3=S=separated, 4=W=widowed"
+17,CATEGORY,"Patient category (N=normal, P=private, A=amenity, O=overseas visitor)",Y,Label,,"Recode other than N, P, A, O to missing ",M,CATEGOCD,"0=N=normal, 1=P=private, 2=A=amenity, 3=O=overseas visitor, 9=missing"
+18,DISTRES,District of residence,N,Label,,,,,
+19,MNHSNO,Mother's NHS number,N,Label,,,,,
+20,ETHNIC,"Mother's ethnic group (pre 1995) (C=Caucasian, A=Black African, W=Black Caribbean, I=Indo-Pakistani, O=Oriental, M=Mediterranean, Z=Other) (and combinations)",Y,Label,,,,ETHNIRCD,"0=C=Caucasian, 1=A=Black African, 2=W=Black Caribbean, 3=I=Indo-Pakistani, 4=O=Oriental, 5=M=Mediterranean, 6=Z=Other, 9=missing"
+21,INTERP,"Interpreter needed (Y=yes, N=no)",N,Label,,Recode W to missing,W,INTERPCD,"0=N=no, 1=Y=yes, 9=W=missing"
+22,SMOKING,"Smoking habits (N=non smoker, L=light (1-9 per day), M=moderate (10-19 per day), H=heavy (20+ per day))",Y,Label,,"Recode other than N, L, M, H to missing ",,SMOKINCD,"0=N=non smoker, 1=L=light (1-9 per day), 2=M=moderate (10-19 per day), 3=H=heavy (20+ per day)"
+23,HISTDIA,"History of diabetes (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,HISTDICD,"0=N=no, 1=Y=yes"
+24,EPILEPS,"History of epilepsy (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,EPILEPCD,"0=N=no, 1=Y=yes"
+25,HYPERTE,"Hypertension at any time (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,HYPERTCD,"0=N=no, 1=Y=yes"
+26,BLDTRANS,"Previous blood transfusion (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",R,BLDTRACD,"0=N=no, 1=Y=yes, 9=missing"
+27,BOOKCMP,"Other booking complications (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ","E, P",BOOKCMCD,"0=N=no, 1=Y=yes, 9=missing"
+28,PARITY,Parity of mother (=0 for first birth),Y,Numeric,PARITY = 0,,,,
+29,PREVLIVE,Number of previous livebirths,N,Numeric,,,,,
+30,PRVSTILL,Number of previous stillbirths,N,Numeric,,,,,
+31,PREVDTHS,Number of previous deaths within 28 days of birth,N,Numeric,,,,,
+32,PREVCAES,Number of previous Caesarians,N,Numeric,,,,,
+33,PREVMISC,Number of previous miscarriages,N,Numeric,,,,,
+34,PREVTERM,Number of previous terminations,N,Numeric,,,,,
+35,LWEIGHT,Weight of last infant at delivery (g),N,Numeric,,,,,
+36,LASTGEST,Gestation of last infant at delivery (weeks),N,Numeric,,,,,
+37,LPERIOD,Date of last menstrual period (DDMMYY),N,Date,,,,,
+38,CERTLPRD,"Certainty of last menstrual period (C=certain, U=uncertain, N=no idea)",Y,Label,,"Recode other than C, U, N to missing",,CERTLPCD,"0=C=certain, 1=U=uncertain, 2=N=no idea, 9=missing"
+39,REGULAR,"Regularity of menstrual cycle (R=regular, I=irregular, A=amenorrhoea)",Y,Label,,"Recode other than R, I, A to missing",,REGULACD,"0=R=regular, 1=I=irregular, 2=A=amenorrhoea"
+40,EDDLMP,Estimated date of delivery by date of last menstrual period,N,Date,,,,,
+41,FIRSTAN,Date of first antenatal visit (DDMMYY),N,Date,,,,,
+42,MHEIGHT,Maternal height (cm),Y,Numeric,,,,,
+43,MWEIGHT,Maternal weight at booking (kg),Y,Numeric,,Recode < 30 or > 200 to missing ,"0-29,>200",,
+44,MBOOKBP,Maternal diastolic blood pressure at booking,Y,Numeric,,Recode < 30 to missing,0-29,,
+45,INTPLAE,"Intended place of delivery (T=this hospital, O=other hospital, H=home, N=none, U=unbooked)",Y,Label,,"Recode other than T, O, H, N, U to missing",,INTPLACD,"0=T=this hospital, 1=O=other hospital, 2=H=home, 3=N=none, 4=U=unbooked"
+46,INTCARE,Intended place of antenatal care (hospital specific),N,Label,,,,,
+47,SPINTDEL,"Specified intended place of delivery (N=NHS hospital, X=GP maternity home, P=private, O=other hospital, Z=other, C=consultant facility, M=mixed consultant/GP facility)",N,Label,,,,,
+48,BOOKHB,Maternal haemoglobin level at booking,Y,Numeric,,Recode < 4 or > 22 to missing,"0-3,>22",,
+49,BLOODGRP,"Maternal bloodgroup (O, A, B, AB)",Y,Label,,"Recode other than O, A, B, AB to missing","0, OP, P",BLOODGCD,"0=O, 1=A, 2=B, 3=AB, 9=missing"
+50,RHESUS,"Rhesus factor (P=positive, N=negative)",Y,Label,,"Recode other than P, N to missing ",,RHESUSCD,"0=N=negative, 1=P=positive"
+51,ANTIBODY,"Antibodies present (N=none, O=other, R=rhesus)",Y,Label,,"Recode other than N, O, R to missing ",M,ANTIBOCD,"0=N=none, 1=O=other, 2=R=rhesus, 9=missing"
+52,SICKLE,"Thalassaemia or sickle cell disorders (N=not done, D=done-negative, T=sickle cell trait, X=disease, Z=other/unknown) (splits from 1995)",Y,Label,,"Recode other than N, D, T, X to missing",,SICKLECD,"0=N=not done, 1=D=done - negative, 2=T=sickle cell trait,3=X=disease, 9=missing"
+53,SKLTRAIT,Sickle cell trait,N,Label,,,,,
+54,PARTSICK,Partner's sickle cell test,N,Label,,,,,
+55,PTSKLTRT,Partner's sickle cell trait,N,Label,,,,,
+56,THALASS,"Thalassaemia or sickle cell disorders (N=not done, D=done-negative, J=major, M=minor, T=trait)",N,Label,,,,,
+57,PTHALTRT,Partner's thalassaemia test,N,Label,,,,,
+58,RUBELLA,"Mother's rubella status (N=not done, I=immune, S=susceptible)",Y,Label,,"Recode other than N, I, S to missing",D,RUBELCD,"0=I=immune, 1=S=susceptible, 2=N=not done"
+59,SYPHILIS,"Syphilis serology (D=done-negative, N=not done, P=positive)",Y,Label,,"Recode other than D, N, P to missing ",I,SYPHILCD,"0=D=done - negative, 1=N=not done, 2=P=positive, 9=missing"
+60,CXSMEAR,"Cervical cytology (N=not done, D=done-normal, A=abnormal, U=unsatisfactory)",Y,Label,,"Recode other than N, D, A, U to missing ",C,CXSMEACD,"0=N=not done, 1=D=done - normal, 2=A=abnormal, 3=U=unsatisfactory, 9=missing"
+61,HEPB,"Hepatitis B (=Australia antigen) (N=not done, D=done - normal, P=positive)",Y,Label,,"Recode other than N, D, P to missing ",,HEPBCD,"0=N=not done, 1=D=done - normal, 2=P=positive"
+62,BPD,Biparietal diameter (mm),N,Numeric,,,,,
+63,EDDUS,Estimated date of delivery by ultrasound (DDMMYY),N,Numeric,,,,,
+64,DATUS,Date of administration of ultrasound scan (DDMMYY),N,Numeric,,,,,
+65,SERUMTST,Serum screen test,N,Label,,,,,
+66,ANOMALY,Anomaly scan,N,Label,,,,,
+67,AFP,"Serum alpha feto protein (N=not done, D=done-normal, R=raised, L=low)",Y,Label,,"Recode other than N, D, R, L to missing ",,AFPCD,"0=N=not done, 1=D=done-normal, 2=R=raised, 3=L=low"
+68,CVS,"Chorionic villus biopsy performed (N=not done, D=done, U=unsuccessful)",Y,Label,,"Recode other than N, D, U to missing ",,CVSCD,"0=N=not done, 1=D=done, 2=U=unsuccessful"
+69,AMNIO,"Amniocentesis (N=not done, D=done, U=unsuccessful)",Y,Label,,"Recode other than N, D, U to missing ",A,AMNIOCD,"0=N=not done, 1=D=done, 2=U=unsuccessful"
+70,DAMNIO1,Date of 1st amniocentesis (DDMMYY) (missing data: see DTAMNIO1),N,Date,,,,,
+71,DAMNIO2,Date of 2nd amniocentesis (DDMMYY) (missing data: see DTAMNIO2),N,Date,,,,,
+72,PREGDIA,"Diabetes in pregnancy (N=none, G=gestational, E=established)",Y,Label,,"Recode other than N, G, E to missing ",Y,PREGDICD,"0=N=none, 1=G=gestational, 2=E=established, 9=missing"
+73,INSULIN,"Insulin treatment required (Y=yes, N=no) (1995 onwards)",Y,Label,,"Recode other than Y, N to missing ","A, .",INSULICD,"0=N=no, 1=Y=yes, 9=missing"
+74,UTI,"Urinary tract infection (N=none, A=asymptomatic bacturia, P=pyleonephritis, O=other UTI )",Y,Label,,"Recode other than N, A, P, O to missing ","0, H, G",UTICD,"0=N=none, 1=A=asymptomatic bacturia, 2=P=pyleonephritis, 3=O=other UTI, 9=missing"
+75,CARDIAC,"History of cardiac disease (N=none, A=acquired, C=congenital)",Y,Label,,"Recode other than N, A, C to missing",D,CARDIACD,"0=N=none, 1=A=acquired, 2=C=congenital, 9=missing"
+76,RENAL,"History of renal disease (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,RENALCD,"0=N=no, 1=Y=yes"
+77,HIGHBP,Highest antenatal diastolic blood pressure,Y,Numeric,,Recode < 30 to missing,0-29,,
+78,PROTEIN,"Proteinuria in pregnancy (N=none, P=persistent proteinuria)",Y,Label,,"Recode other than N, P to missing ",,PROTEICD,"0=N=none, 1=P=persistent proteinuria"
+79,APH,"Antepartum haemorrhage (N=none, D=doubtful cause, L=local cause, P=praevia with haemorrhage, X=praevia without haemorrhage, A=abruption proven)",Y,Label,,"Recode other than D, L, P, X, N, A to missing ",Y,APHCD,"0=N=none, 1=D=doubtful cause, 2=L=local cause, 3=P=praevia with haemorrhage, 4=X=praevia without haemorrhage, 5=A=abruption proven, 9=missing"
+80,OTHANCMP,"Other antenatal complications (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",E,OTHANCCD,"0=N=no, 1=Y=yes, 9=missing"
+81,MLASTWT,Mothers weight at last clinic visit (kg),Y,Numeric,,Recode < 30 or > 200 to missing,"0-29,>200",,
+82,LOWHB,Lowest antenatal haemoglobin level (numeric or NONE),Y,Numeric,,Recode < 4 or > 22 to missing,"0-3,>22",,
+83,ANBTRANS,Number of antenatal blood transfusions given,Y,Numeric,,,,,
+84,CXSUTURE,"Cervical suture (Y=yes, N=no)",N,Label,,,,,
+85,NOSCANS,Number of ultrasound scans given,Y,Numeric,,,,,
+86,NOANC,Number of antenatal clinic visits,Y,Numeric,,,,,
+87,ANMANAGE,Antenatal management (hospital specific),N,Label,,,,,
+88,MEDIC,"Medication given (S=steroids, O=other, N=none)",N,Label,,,,,
+89,STEROIDS,Date steroids administered (1995 onwards)? (DDMMYY),N,Date,,,,,
+90,OTHDRUGS,Date other drugs administered (1995 onwards)? (DDMMYY),N,Date,,,,,
+91,ANNIGHTS,Number of antenatal in-patient nights,Y,Numeric,,,,,
+92,NOADMINS,Number of antenatal admissions,Y,Numeric,,,,,
+93,AGEBOOK,Mothers age at booking (years),Y,Numeric,,Recode < 10 or > 60 to missing,"0-9,>60",,
+94,GESTBOOK,Gestation age at booking (weeks),Y,Numeric,,Recode < 5 or > 44 to missing,"0-4,>44",,
+95,ANREASN,"Reason for antenatal completion (A=antenatal only, L=left district, S=spontaneous abortion, I=induced abortion, E=ectopic pregnancy, M=mole, N=not pregnant, D=mother died)",N,Label,,"Recode 0,C,R,X to missing","0,C,R,X",ANREASCD,"0=''=none, 1=A=antenatal only, 2=L=left district, 3=S=spontaneous abortion, 4=I=induced abortion, 5=E=ectopic pregnancy, 6=M=mole, 7=N=not pregnant, 8=D=mother died, 9=0,C,R,X=missing"
+96,DATCOMP,Date pregnancy ended (DDMMYY),N,Date,,,,,
+97,NOINFANT,Number of infants delivered,Y,Numeric,NOINFANT = 1,,,,
+98,SPARENT,"Single unsupported mother (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,SPARENCD,"0=N=no, 1=Y=yes"
+99,ONSETLA,"Labour onset (S=spontaneous, I=induction, N=none)",Y,Label,,"Recode other than S, I, N to missing ",E,ONSETLCD,"0=S=spontaneous, 1=I=induction, 2=N=none, 9=missing"
+100,AUGMENT,"Augmentation (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",A,AUGMENCD,"0=N=no, 1=Y=yes, 9=missing"
+101,DAT1STG,Date of onset of 1st stage of labour (DDMMYY),N,Date,,,,,
+102,TIM1STG,Time of 1st stage of labour (HHMM),N,Numeric,,,,,
+103,DAT2STG,Date of onset of 2nd stage of labour (DDMMYY),N,Date,,,,,
+104,TIM2STG,Time of 2nd stage of labour (HHMM),N,Numeric,,,,,
+105,ANALAB,"Analgesia administered in labour (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
+106,ANALDEL,"Analgesia administered in delivery (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
+107,ANALPDL,"Analgesia administered post-delivery (I=inhalational, P=pethidine, E=epidural, G=G.A., S=spinal, C=CSE, T=TENS, L=local infiltration, B=pudendal block, N=none, O=other) (and combinations)",Y,Label,,,,,
+108,METHIND,"Method of induction/augmentation (A=ARM, O=oxytocin, P=prostaglandins) (and combinations)",Y,Label,,"Recode other than A, O, P and combinations to missing","C, DO, EAO, EO, H, HO, IA, IO, N, NA, NAO, NO, NOA, NOP, NP, P1, PI, RO, Y, YOP",METHINCD,"0=A=ARM, 1=O=oxytocin, 2=P=prostaglandins, 3=AO, OA=ARM and oxytocin, 4=AP, PA=ARM and prostaglandins, 5=OP, PO=oxytocin and prostaglandins, 6=AOP, APO, OAP, OPA, PAO, POA=ARM, oxytocin and prostaglandins, 9=missing"
+109,PYREXIA,"Pyrexia in labour of unknown cause (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,PYREXICD,"0=N=no, 1=Y=yes"
+110,BLDLOSS,Blood loss (ml),Y,Numeric,,Recode 9999 to missing,9999,,
+111,PERINEUM,"State of perineum (I=intact, F=first degree tear, S=second degree tear, T=third degree tear, E=episiotomy) (and combinations)",Y,Label,,"Recode other than E, ES, ET, F, FE, I, S, SE, T, TE to missing",ST,PERINECD,"0=I=intact, 1=F=first degree tear, 2=S=second degree tear, 3=T=third degree tear, 4=E=episiotomy, 5=FE=first degree tear and episiotomy, 6=SE=second degree tear and episiotomy, 7=TE, ET=third degree tear and episiotomy"
+112,NONPERI,"Non-perineal tear (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,NONPERCD,"0=N=no, 1=Y=yes"
+113,SUTURE,"Perineum sutured (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ","&, D, R",SUTURECD,"0=N=no, 1=Y=yes, 9=missing"
+114,MANREMOV,"Manual removal of placenta (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,MANREMCD,"0=N=no, 1=Y=yes"
+115,PLACENTA,"Placenta complete (C=complete, I=incomplete)",Y,Label,,"Recode other than C, I to missing ",,PLACENCD,"0=C=complete, 1=I=incomplete"
+116,MEMBRANE,"Ragged membrane (C=complete, R=ragged)",N,Label,,,,,
+117,LABCOMP,"Other labour complications (Y=yes, N=no, R=?, C=?) (coding incomplete)",N,Label,,,,,
+118,ECLAMP,"Eclampsia (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,ECLAMPCD,"0=N=no, 1=Y=yes"
+119,THROMBO,"Thromboembolism (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,THROMBCD,"0=N=no, 1=Y=yes"
+120,ERPC,"Evacuation of retained products of conception (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,ERPCCD,"0=N=no, 1=Y=yes"
+121,PSYCHO,"Puerperal psychosis (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,PSYCHOCD,"0=N=no, 1=Y=yes"
+122,PPINFEC,"Post partum infection (G=genital, W=wound, U=UTI, B=breast, C=chest, P=pyrexia (unknown cause), N=none) (and combinations)",Y,Label,,,,,
+123,DISCHHB,Haemoglobin level at discharge,Y,Numeric,,Recode < 4 or > 22 to missing,"0-3,>22",,
+124,ANTID,"Anti-D given (N=not required, R=required - not given, G=given)",Y,Label,,"Recode other than N, R, G to missing ","D, U",ANTIDCD,"0=N=not required, 1=R=required - not given, 2=G=given, 9=missing"
+125,RUBELVAC,"Rubella vaccination (N=not required, R=required - not given, G=given)",N,Label,,,,,
+126,PNBLTRNS,Number of post natal blood transfusions,Y,Numeric,,,,,
+127,CNTRACEP,"Proposed contraception (U=undecided, P=progesterone only oral contraception (OC), C=combined OC, I=IUCD, S=sheath, D=diaphragm, Z=depo provera, N=none, X=for sterilization, W=sterilized, V=vasectomy, O=chemicals only) (and combinations)",N,Label,,,,,
+128,PNMCOMP,"Other natal maternal complications (Y=yes, N=no)",N,Label,,,,,
+129,METHDISH,Method of maternal discharge ,N,Label,,,,,
+130,MANICD,"Mother's antenatal complications ICD coded (Y=yes, N=no)",N,Label,,,,,
+131,MANICD1,Mother's antenatal complications ICD code 1,N,Label,,,,,
+132,MANICD2,Mother's antenatal complications ICD code 2,N,Label,,,,,
+133,MANICD3,Mother's antenatal complications ICD code 3,N,Label,,,,,
+134,MANICD4,Mother's antenatal complications ICD code 4,N,Label,,,,,
+135,MICDOPS,"Mother's operations codes (Y=yes, N=no)",N,Label,,,,,
+136,MICDOPS1,Mother's operation 1 OPCS code,N,Label,,,,,
+137,MICD1DAT,Mother's date of operation 1 (DDMMYY),N,Date,,,,,
+138,MICDOPS2,Mother's operation 2 OPCS code,N,Label,,,,,
+139,MICD2DAT,Mother's date of operation 2 (DDMMYY),N,Date,,,,,
+140,MICDOPS3,Mother's operation 3 OPCS code,N,Label,,,,,
+141,MICD3DAT,Mother's date of operation 3 (DDMMYY),N,Date,,,,,
+142,MICDCOMP,"Mother's delivery complications ICD codes (Y=yes, N=no)",N,Label,,,,,
+143,MICDLC1,Mother's delivery complications ICD code 1,N,Label,,,,,
+144,MICDLC2,Mother's delivery complications ICD code 2,N,Label,,,,,
+145,MICDLC3,Mother's delivery complications ICD code 3,N,Label,,,,,
+146,MICDPCPS,"Mother's post-natal (puerperal) complications ICD codes (Y=yes, N=no)",N,Label,,,,,
+147,MICDPCP1,Mother's post-natal (puerperal) complications ICD code 1,N,Label,,,,,
+148,MICDPCP2,Mother's post-natal (puerperal) complications ICD code 2,N,Label,,,,,
+149,MICDPCP3,Mother's post-natal (puerperal) complications ICD code 3,N,Label,,,,,
+150,MAGEDEL,Maternal age at delivery (years),Y,Numeric,,Recode < 10 or > 60 to missing,"0-9,>60",,
+151,LENG1STG,Length of 1st stage of labour (HHMM),Y,Numeric,,Recode numbers HHMM with MM>59 to missing,,LENG1SCD,Length of 1st stage of labour in seconds (in HHMMSS format)
+152,MPNSTAY,Length of mother's post-natal stay in hospital (days),Y,Numeric,,,,,
+153,RUPTMET,"Method of rupture of membranes (S=spontaneous, A=artificial, N=none) (coding incomplete)",Y,Label,,"Recode other than S, A, N to missing",,RUPTMECD,"0=S=spontaneous, 1=A=artificial, 2=N=none"
+154,DATRUP,Date of rupture of membranes (DDMMYY),N,Date,,,,,
+155,TIMRUP,Time membranes ruptured (HHMM),N,Numeric,,Recode numbers HHMM with MM>59 to missing,,,
+156,PROLAPSE,"Cord prolapse (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ","""",PROLAPCD,"0=N=no, 1=Y=yes, 9=missing"
+157,MANIPUL,"Manipulation of fetus before delivery (N=no manipulation, V=vertex, B=breech, T=transverse/oblique, O=oblique, Z=other)",Y,Label,,"Recode other than N, V, B, T, O, Z to missing ",,MANIPUCD,"0=N=no manipulation, 1=V=vertex, 2=B=breech, 3=T=transverse/oblique, 4=O=oblique, 5=Z=other"
+158,CTG,"Electronic fetal heart monitor (N=normal, A=abnormal, Z=not monitored)",Y,Label,,"Recode other than N, A, Z to missing ",,CTGCD,"0=N=normal, 1=A=abnormal, 2=Z=not monitored"
+159,FETALPH,Lowest fetal pH (numeric or NONE),Y,Numeric,,Recode > 14 to missing,>14,,
+160,MECONIUM,"Meconium stained liquor (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,MECONICD,"0=N=no, 1=Y=yes, 9=missing"
+161,BIRTHDAT,Infant's date of birth (DDMMYY),Y,Date,,,,,
+162,BIRTHTIM,Infants time of birth (HHMM),N,Numeric,,,,,
+163,PLACDAT,Date of delivery of placenta (DDMMYY),N,Date,,,,,
+164,PLACTIM,Time of delivery of placenta (HHMM),N,Numeric,,,,,
+165,SEX,"Sex (M=male, F=female, I=indeterminate)",Y,Label,,"Recode other than M, F, I to missing ",@,SEXCD,"0=M=male, 1=F=female, 2=I=indeterminate, 9=missing"
+166,BIRTHWGT,Birthweight (g),Y,Numeric,BIRTHWGT >= 200,,,,
+167,GEST,Gestation (weeks),Y,Numeric,,Recode < 5 or > 44 to missing,"0-4,>44",,
+168,CONGABS,"Congenital abnormalities (Y=yes, N=no, ?=query)",Y,Label,,"Recode other than Y, N, ? to missing ","@, E, P",CONGABCD,"0=N=no, 1=Y=yes, 2=?=query, 9=missing"
+169,PRESDEL,"Presentation of fetus at delivery (V=vertex, B=breech, O=other cephalic, Z=other)",Y,Label,,"Recode other than V, B, O, Z to missing ",X,PRESDECD,"0=V=vertex, 1=B=breech, 2=O=other cephalic, 3=Z=other, 9=missing"
+170,METHDEL,"Method of delivery (S=spontaneous, C=emergency caesarean, E=elective, L=lift out forceps, R=rotational forceps, O=other forceps, V=ventouse, A=assisted breech, B=breech extraction)",Y,Label,,"Recode other than S, C, E, L, R, O, V, A, B to missing ",,METHDECD,"0=S=spontaneous, 1=C=emergency caesarean, 2=E=elective caesarean, 3=L=lift out forceps, 4=R=rotational forceps, 5=O=other forceps, 6=V=ventouse, 7=A=assisted breech, 8=B=breech extraction"
+171,OUTCOME,"Outcome (L=liveborn and still living, N=neonatal death, A=antepartum stillbirth, I=intrapartum stillbirth, X=indeterminate stillbirth, Y=spontaneous abortion, Z=induced abortion)",Y,Label,,"Recode other than L, N, A, I, X, Y, Z to missing ",,OUTCOMCD,"0=L=liveborn and still living, 1=N=neonatal death, 2=A=antepartum stillbirth, 3=I=intrapartum stillbirth, 4=X=indeterminate stillbirth, 5=Y=spontaneous abortion, 6=Z=induced abortion"
+172,PLACEDL,"Place of delivery (T=this hospital, I=in transit, H=home, O=other)",Y,Label,,"Recode other than T, I, H, O to missing ","N, Z",PLACEDCD,"0=T=this hospital, 1=I=in transit, 2=H=home, 3=O=other"
+173,REASCHG,"Reason for change of place of delivery (C=change of address, U=unintentionally in labour, P=pregnancy - clinical reasons, L=labour - clinical reasons, O=other reasons - pregnancy, Z=other reasons - labour)",Y,Label,,"Recode other than C, U, P, L, O, Z to missing ","E, R",REASCHCD,"0=C=change of address, 1=U=unintentionally in labour, 2=P=pregnancy - clinical reasons, 3=L=labour - clinical reasons, 4=O=other reasons - pregnancy, 5=Z=other reasons - labour, 9=missing"
+174,DELBY,"Person conducting delivery (M=midwife, A=agency midwife, H=hospital doctor, G=GP, C=community midwife, O=other, U=unattended in labour)",Y,Label,,"Recode other than M, A, H, G, C, O, U to missing ",R,DELBYCD,"0=M=midwife, 1=A=agency midwife, 2=H=hospital doctor, 3=G=GP, 4=C=community midwife, 5=O=other, 6=U=unattended in labour, 9=missing"
+175,SPECPDEL,"Specified place of delivery (N=NHS hospital, X=GP maternity home, P=private, O=other hospital, Z=other, C=consultant facility, M=mixed consultant/GP facility)",N,Label,,,,,
+176,BRCHDIAG,"Undiagnosed breech delivery (D=diagnosed, U=undiagnosed)",Y,Label,,"Recode other than D, U (u) to missing ","(, ., /, ?, @, 1, 2, 3, 4, 6, a, A, b, B, c, C, E< F, g, G, H, I, K, l, L, M, n, N, o, O, p, P, q, Q, R, S, T, V, w, W, X, Y, Z",BRCHDICD,"0=D=diagnosed, 1=U=undiagnosed, 9=missing"
+177,BTHPOOL,"Use of birth pool (N=not used, L=labour only, D=delivery only, B=both labour and delivery, U=unknown)",Y,Label,,"Recode other than N (n), L, D, B (b), U (u) to missing ","), ., /, ?, @, 0, 3, 7, 9, a, A, c, C, D, E, f, F, G< H, i, I, K, M, o, O, P, r, R, S, t, T, V, w, W, X, Y",BTHPOOCD,"0=N=not used, 1=L=labour only, 2=D=delivery only, 3=B=both labour and delivery, 4=U=unknown"
+178,INFETHNI,"Infants's ethnic group (pre 1995) (C=Caucasian, A=Black African, W=Black Caribbean, I=Indo-Pakistani, O=Oriental, M=Mediterranean, Z=Other) (and combinations)",Y,Label,,"Recode other than C, A, W, I, O, M and Z (and post 1995 equivalents) to missing","&&&&, HISH, XGKC",,"0=C=Caucasian, 1=A=Black African, 2=W=Black Caribbean, 3=I=Indo-Pakistani, 4=O=Oriental, 5=M=Mediterranean, 6=Z=Other, 9=missing"
+179,APGAR1,Apgar score at 1 minute,Y,Numeric,,,,,
+180,APGAR5,Apgar score at 5 minutes,Y,Numeric,,,,,
+181,ONSRESP,Onset of regular respiration (minutes),Y,Numeric,,Recode > 60 to missing,>60,ONSRESCD,Numeric recoding
+182,RESUSPP,"Resuscitation positive pressure (N=nil, M=mask, I=intubation, C=cardiac massage and intubation)",Y,Label,,"Recode other than N, M, I, C to missing ",Y,RESUSPCD,"0=N=nil, 1=M=mask, 2=I=intubation, 3=C=cardiac massage and intubation, 9=missing"
+183,RESUSDG,"Resuscitation drugs used (N=none, X=naloxone, S=sodium bicarbonate, O=other)",Y,Label,,"Recode other than N, X, S, O to missing ",,RESUSDCD,"0=N=none, 1=X=naloxone, 2=S=sodium bicarbonate, 3=O=other"
+184,OTHDELCM,"Other delivery complications (Y=yes, N=no)",N,Label,,,,,
+185,INFNO,Infant's hospital number (hospital specific),N,Label,,,,,
+186,PLACE,Birth place (hospital specific or DOM),N,Label,,,,,
+187,PAEDGEST,Paediatric assessment of gestation (weeks),Y,Numeric,,Recode < 5 or > 44 to missing,"0-4,>44",,
+188,HEADCIRC,Birth head circumference (cm),Y,Numeric,,Recode <20 or >40 to missing,"0-19,>40",,
+189,BLENGTH,Birth length (cm),Y,Numeric,,Recode <32 or >65 to missing,"0-31,>65",,
+190,HIP,"Hip examination (N=normal, D=doubtful, A=abnormal, Z=not examined)",Y,Label,,"Recode other than N, D, A, Z to missing ","1, #",HIPCD,"0=N=normal, 1=D=doubtful, 2=A=abnormal, 3=Z=not examined"
+191,CONVUL,"Convulsions (A=absent, P=present)",Y,Label,,"Recode other than A, P to missing ","D, #",CONVULCD,"0=A=absent, 1=P=present, 9=missing"
+192,OABNML,"Other abnormal behaviour (A=absent, P=present)",N,Label,,,,,
+193,JAUNDICE,"Jaundice present (A=absent, P=present)",Y,Label,,"Recode other than A, P to missing ","D, N",JAUNDICD,"0=A=absent, 1=P=present, 9=missing"
+194,BILI,Maximum bilirubin level (mmol),Y,Numeric,,Recode <1 or >600 to missing,"<1,>600",,
+195,INBTHCMP,"Other infant post-natal complications (Y=yes, N=no)",N,Label,,,,,
+196,CONGDISH,"Congenital abnormalities noted at discharge? (Y=yes, N=no, ?=query)",N,Label,,,,,
+197,SCBU,"Infant taken to SCBU (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,SCBUCD,"0=N=no, 1=Y=yes"
+198,ADSCBU,Date of admission to SCBU (DDMMYY),N,Date,,,,,
+199,DISSCBU,Discharge date from SCBU (DDMMYY),N,Date,,,,,
+200,HIGHNEO,"Highest level of neonatal care (N=normal, S=special, H=high intensive, I=maximum intensive)",Y,Label,,"Recode other than N, S, H, I to missing","&, 0, 1, 2, 3, D, E, R",HIGHNECD,"4=N=normal, 5=S=special, 6=H=high intensive, 7=I=maximum intensive, 0, 1, 2, 3, 9=missing"
+201,TCARE,"Transitional care (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ","&, S",TCARECD,"0=N=no, 1=Y=yes, 9=missing"
+202,CORD,"Cord separation (S=separated, N=not separated)",N,Label,,,,,
+203,GUTHRIE,"Guthrie test (D=done, N=not done)",N,Label,,,,,
+204,BCG,"BCG vaccination given (G=given, N=not given)",N,Label,,,,,
+205,HAEMPATH,"Haemoglobinopathy (D=done, N=not done)",N,Label,,,,,
+206,INFHB,Infant's haemoglobin level,N,Numeric,,,,,
+207,INFBGP,"Infant's blood group (A, B, O, AB)",N,Label,,,,,
+208,INFCMBS,"Coomb's test (D=done, N=not done)",N,Label,,,,,
+209,CONDINF,"Condition of infant at discharge (blank=not known (presumed fit for discharge), F=fit for discharge, S=still in hospital, N=neonatal death, I=in another hospital)",Y,Label,,"Recode other than F, S, N, I, blank to missing ","C, D, E",CONDINCD,"0=blank=not known (presumed fit for discharge), 1=F=fit for discharge, 2=S=still in hospital, 3=N=neonatal death, 4=I=in another hospital, 9=missing"
+210,DINFDISH,Date of discharge of infant (DDMMYY),N,Date,,,,,
+211,DISCHWT,Infant weight at discharge (g),N,Numeric,,,,,
+212,FEEDING,"Feeding at discharge (B=breast, A=artificial, S=supplemented)",N,Label,,,,,
+213,DESTINF,"Destination of infant at discharge (M=mother's home, R=relative's care, F=foster/residential care, O=other hospital - treatment, S=other hospital - social)",N,Label,,,,,
+214,INFFU,"Infant follow-up (N=none, T=this hospital, O=other hospital, B=both hospitals)",N,Label,,,,,
+215,INFMEDIC,Infant medication at discharge,N,Label,,,,,
+216,INDTHDAT,Date of infant's death (DDMMYY),N,Date,,,,,
+217,TIMDEATH,Time of infant's death (HHMM),N,Date,,,,,
+218,AUTOPSY,"Autopsy performed (Y=yes, N=no)",N,Label,,,,,
+219,IICDCMPS,"Infant's complications ICD codes (Y=yes, N=no)",N,Label,,,,,
+220,IICDCMP1,Infant's complications ICD code 1,N,Label,,,,,
+221,IICDCMP2,Infant's complications ICD code 2,N,Label,,,,,
+222,IICDCMP3,Infant's complications ICD code 3,N,Label,,,,,
+223,IICDCMP4,Infant's complications ICD code 4,N,Label,,,,,
+224,IICDCMP5,Infant's complications ICD code 5,N,Label,,,,,
+225,IICDOCMP,Other infant's complications coded (coding uncertain),N,Label,,,,,
+226,IICDOCP1,Other infant's complications code 1,N,Label,,,,,
+227,IICDOCP2,Other infant's complications code 2,N,Label,,,,,
+228,IICDOCP3,Other infant's complications code 3,N,Label,,,,,
+229,IICDOCP4,Other infant's complications code 4,N,Label,,,,,
+230,IICDOCP5,Other infant's complications code 5,N,Label,,,,,
+231,ICDCNGAB,"Infant's congenital abnormalities coded (Y=yes, N=no)",N,Label,,,,,
+232,ICDCNGB1,Infant's congenital abnormalities code 1,N,Label,,,,,
+233,ICDCNGB2,Infant's congenital abnormalities code 2,N,Label,,,,,
+234,ICDCNGB3,Infant's congenital abnormalities code 3,N,Label,,,,,
+235,ICDCNGB4,Infant's congenital abnormalities code 4,N,Label,,,,,
+236,ICDCNGB5,Infant's congenital abnormalities code 5,N,Label,,,,,
+237,DAY28,Infant's condition at 28 days,N,Label,,,,,
+238,CENTILE,Birthweight centile,Y,Numeric,,,,,
+239,LENGLAB,Length of 2nd stage of labour (HHMM),N,Numeric,,Recode numbers HHMM with MM>59 to missing,,LENGLCD,Duration of labour (HHMM)
+240,TIMSCBU,Days spent in SCBU,Y,Numeric,,Recode < 0 or > 365 to missing,"<0,>365",,
+241,AGEDEATH,Age at neonatal death (days),N,Numeric,,Recode to missing? (John H to give answer),,,
+242,LENG2STG,Length of 2nd stage of labour (HHMM),Y,Numeric,,Recode numbers HHMM with MM>59 to missing,,LENG2SCD,Length of 2nd stage of labour in seconds (in HHMMSS format)
+243,DAYATDTH,Days old at death,Y,Numeric,,Any still alive,,,
+244,LENG3STG,Length of 3rd stage of labour (HHMM) (missing),Y,Numeric,,Recode numbers HHMM with MM>59 to missing,,LENG3SCD,Length of 3rd stage of labour in seconds (in HHMMSS format)
+245,INTHOSDL,Intended hospital of delivery,N,Label,,,,,
+246,REASON,Reason antenatal care discontinued,N,Label,,,,,
+247,SPECOPDL,"Specified other place of delivery (N=NHS hospital, X=GP maternity home, P=private, O=other hospital, Z=other, C=consultant facility, M=mixed consultant/GP facility)",N,Label,,,,,
+248,METHSTER,"Method of sterilization (T=tube division ligation, L=laparoscopy, O=other, N=none)",N,Label,,,,,
+249,MDEST,Destination of mother,N,Label,,,,,
+250,BORNAT,Actual hospital of delivery,N,Label,,,,,
+251,INFNHSNO,Infant's NHS number (not used?),N,Label,,,,,
+252,TIMDISH,Time of discharge of infant (missing),N,Numeric,,,,,
+253,ETHNICCD,Mothers ethnic group code,N,Label,,,,,
+254,ETHNICP,Mothers ethnic group PAS code,N,Label,,,,,
+255,INFETHCD,Infants ethnic group code,Y,Label,,,,INETHRCD,
+256,INFETHP,Infants ethnic group PAS code,N,Label,,,,,
+,,,,,,,,,
+,Variables not used in current dataset (were in 1988-98 version),,,,,,,,
+,TYPE,Record type,N,Label,,,,,
+,UNBOOKED,"Reason for not booking (blank=not applicable, I=in-utero transfer, N=not formally booked, B=BBA, O=other)",N,Label,,"Recode other than B, I, N, O, blank to missing","U, Y",UNBOOKCD,"0=blank=not applicable, 1=I=in-utero transfer, 2=N=not formally booked, 3=B=BBA, 4=O=other, 9=missing"
+,ANOPS,Antenatal operations performed (coding unknown),N,Label,,,,,
+,MWARD,Ward mother transferred to (hospital specific),N,Label,,,,,
+,INFCOMP,"Infant complications (Y=yes, N=no)",N,Label,,,,,
+,INFMED,"Infant discharged against medical advice (Y=yes, N=no)",N,Label,,,,,
+,OTHCDISH,"Other conditions noted at discharge (A=absent, P=present)",N,Label,,,,,
+,INFPNST,Length of infant's post-natal stay in hospital (days)?,N,Numeric,,,,,
+,DOWNRISK,Down's syndrome risk factor?,N,Numeric,,,,,
+,BMI,Maternal body mass index,N,Numeric,,Recode to missing if MHEIGHT or MWEIGHT are missing,,BMICD,MWEIGHT/(MHEIGHT/100)**2
+,TIMPLDEL,?,N,Numeric,,,,,
+,MRLIGION,Mother's religion,N,Label,,,,,
+,INFCOMPS,?,N,Label,,,,,
+,MPCDEVAL,?,N,Label,,,,,
+,YR,Year? (duplicates YEAR?),N,Numeric,,,,,
+,,,,,,,,,
+,New Variables,,,,,,,,
+,BMICD,Body mass index (recalculated so as to be missing when height and weight are),Y,Numeric,,,,,
+,RMBOOKBP,Maternal diastolic blood pressure at booking rounded to nearest 5,Y,Numeric,,,,,
+,RBMI,Body mass index rounded to nearest 1,Y,Numeric,,,,,
+,RHIGHBP,Highest antenatal diastolic blood pressure rounded to nearest 5,Y,Numeric,,,,,
+,RBOOKHB,Maternal haemoglobin level at booking rounded to nearest 1,Y,Numeric,,,,,
+,RLOWHB,Lowest antenatal haemoglobin level rounded to nearest 1,Y,Numeric,,,,,
+,LATEBOOK,"Those booking after 20 weeks (0=0-20 weeks gestation at booking, 1=21+ weeks gestation at booking)",Y,Numeric,,,,,
+,PET,"Preeclamptic toxaemia (0=normotensive (booking BP<=90, gestation age at booking<=20, highest BP<=90, no proteinuria), 1=kidney disease (booking BP<=90, gestation age at booking<=20, highest BP<=90, proteinuria), 2=essential hypertension (booking BP>90, gestation age at booking<=20, highest BP>90, no proteinuria), 3=pregnancy-induced hypertension (booking BP<=90, gestation age at booking<=20, highest BP>90, no proteinuria), 4=preeclamptic toxaemia (booking BP<=90, gestation age at booking<=20, highest BP>90, proteinuria), 5=essential hypertension leading to preeclamptic toxaemia (booking BP>90, gestation age at booking<=20, highest BP>90, proteinuria))",Y,Numeric,,Recode any with booking BP>90 and highest BP<=90 or with gestation age at booking >20 to missing,Any with booking BP>90 and highest BP<=90 or with gestation age at booking >20,,
+,INCRBPCD,Increase in antenatal maternal diastolic blood pressure (=HIGHBP-MBOOKBP),Y,Numeric,,,,,
+,DECRHBCD,Decrease in antenatal maternal haemoglobin (=MBOOKHB-LOWHB),Y,Numeric,,,,,
+,PERDTHCD,"Perinatal mortality (0=liveborn and still living (OUTCOME=L and CONDINF not equal to N), 1=liveborn but neonatal death (either OUTCOME=N or CONDINF=N), 2=antepartum stillbirth (OUTCOME=A), 3=intrapartum stillbirth (OUTCOME=I), 4=indeterminate stillbirth (OUTCOME=X), 5=spontaneous abortion (OUTCOME=Y), 6=induced abortion (OUTCOME=Z))",N,Numeric,,Recode any with CONDINF=D to missing,Any with CONDINF=D,,
+,INFDDTHC,Date of death,N,Numeric,,Any still alive,,,
+,PERDTNCD,"Perinatal mortality (0=liveborn and living >365 days after birth, 1=liveborn and living 28-365 days after birth, 2=liveborn and living 7-27 days after birth, 3=liveborn and living 0-6 days after birth, 4=antepartum stillbirth (OUTCOME=A), 5=intrapartum stillbirth (OUTCOME=I), 6=indeterminate stillbirth (OUTCOME=X), 7=spontaneous abortion (OUTCOME=Y), 8=induced abortion (OUTCOME=Z))",Y,Numeric,,Recode any with OUTCOME missing to missing,,,
+,DGESUS,Days of gestation predicted from ultrasound,Y,Numeric,,,,,
+,DGESLMP,Days of gestation predicted from last menstrual period,Y,Numeric,,,,,
+,WGEST,"Best estimate of completed weeks of gestation (using ultrasound, LMP)",Y,Numeric,,,,,
+,DGEST,"Best estimate of days of gestation (using ultrasound, LMP)",Y,Numeric,,,,,
+,SEXRCD,"Sex code (0=male, 1=female)",Y,Numeric,,,,,
+,PERDT7,"Perinatal mortality (up to 7 days after birth) (0=no, 1=yes)",Y,Numeric,,,,,
+,PERDT28,"Perinatal mortality (up to 28 days after birth) (0=no, 1=yes)",Y,Numeric,,,,,
+,PERDTYR,"Perinatal mortality (up to year after birth) (0=no, 1=yes)",Y,Numeric,,,,,
+,NEODT7,"Neonatal mortality (up to 7 days after birth) (0=no, 1=yes)",Y,Numeric,,,,,
+,NEODT28,"Neonatal mortality (up to 28 days after birth) (0=no, 1=yes)",Y,Numeric,,,,,
+,NEODTYR,"Neonatal mortality (up to year after birth) (0=no, 1=yes)",Y,Numeric,,,,,
+,RBIRTHWT,Birthweight rounded to nearest 100 g,Y,Numeric,,,,,
+,IPPV,Intermittent positive pressure ventilation,Y,Numeric,,,,,"0=no IPPV, 1=intubated IPPV"
+,MIPPV,Masked intermittent positive pressure ventilation,Y,Numeric,,,,,"0=no IPPV or intubated IPPV, 1=Masked IPPV"
+,TIPPV,Total (masked + intubated) intermittent positive pressure ventilation,Y,Numeric,,,,,"0=no IPPV, 1=Total (masked + intubated) IPPV"
+,RDECRHB,Rounded decrease in maternal Hb (rounded to nearest 1),Y,Numeric,,,,,
