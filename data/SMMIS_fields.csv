@@ -12,7 +12,7 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 11,RECSTAT,,Record status,N,Label,,,,,
 12,PREGOCC,,Pregnancy occurrence,N,Label,,,,,
 13,BOOKSTAT,,Booking status,N,Label,,,,,
-14,RECDAT,1,Date record created (DDMMYY),N,Date,,,,,
+14,RECDAT,,Date record created (DDMMYY),N,Date,,,,,
 15,MDOB,1,Mothers date of birth (DDMMYY),Y,Date,,,,,
 16,MARITAL,,"Marital status (M=married, N=never married, D=divorced, S=separated, W=widowed)",Y,Label,,"Recode other than M, N, D, S, W to missing ","2, U",MARITACD,"0=M=married, 1=N=never married, 2=D=divorced, 3=S=separated, 4=W=widowed"
 17,CATEGORY,,"Patient category (N=normal, P=private, A=amenity, O=overseas visitor)",Y,Label,,"Recode other than N, P, A, O to missing ",M,CATEGOCD,"0=N=normal, 1=P=private, 2=A=amenity, 3=O=overseas visitor, 9=missing"
@@ -159,7 +159,7 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 158,CTG,1,"Electronic fetal heart monitor (N=normal, A=abnormal, Z=not monitored)",Y,Label,,"Recode other than N, A, Z to missing ",,CTGCD,"0=N=normal, 1=A=abnormal, 2=Z=not monitored"
 159,FETALPH,,Lowest fetal pH (numeric or NONE),Y,Numeric,,Recode > 14 to missing,>14,,
 160,MECONIUM,1,"Meconium stained liquor (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,MECONICD,"0=N=no, 1=Y=yes, 9=missing"
-161,BIRTHDAT,,Infant's date of birth (DDMMYY),Y,Date,,,,,
+161,BIRTHDAT,1,Infant's date of birth (DDMMYY),Y,Date,,,,,
 162,BIRTHTIM,,Infants time of birth (HHMM),N,Numeric,,,,,
 163,PLACDAT,,Date of delivery of placenta (DDMMYY),N,Date,,,,,
 164,PLACTIM,,Time of delivery of placenta (HHMM),N,Numeric,,,,,
@@ -168,7 +168,7 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 167,GEST,,Gestation (weeks),Y,Numeric,,Recode < 5 or > 44 to missing,"0-4,>44",,
 168,CONGABS,,"Congenital abnormalities (Y=yes, N=no, ?=query)",Y,Label,,"Recode other than Y, N, ? to missing ","@, E, P",CONGABCD,"0=N=no, 1=Y=yes, 2=?=query, 9=missing"
 169,PRESDEL,,"Presentation of fetus at delivery (V=vertex, B=breech, O=other cephalic, Z=other)",Y,Label,,"Recode other than V, B, O, Z to missing ",X,PRESDECD,"0=V=vertex, 1=B=breech, 2=O=other cephalic, 3=Z=other, 9=missing"
-170,METHDEL,,"Method of delivery (S=spontaneous, C=emergency caesarean, E=elective, L=lift out forceps, R=rotational forceps, O=other forceps, V=ventouse, A=assisted breech, B=breech extraction)",Y,Label,,"Recode other than S, C, E, L, R, O, V, A, B to missing ",,METHDECD,"0=S=spontaneous, 1=C=emergency caesarean, 2=E=elective caesarean, 3=L=lift out forceps, 4=R=rotational forceps, 5=O=other forceps, 6=V=ventouse, 7=A=assisted breech, 8=B=breech extraction"
+170,METHDEL,1,"Method of delivery (S=spontaneous, C=emergency caesarean, E=elective, L=lift out forceps, R=rotational forceps, O=other forceps, V=ventouse, A=assisted breech, B=breech extraction)",Y,Label,,"Recode other than S, C, E, L, R, O, V, A, B to missing ",,METHDECD,"0=S=spontaneous, 1=C=emergency caesarean, 2=E=elective caesarean, 3=L=lift out forceps, 4=R=rotational forceps, 5=O=other forceps, 6=V=ventouse, 7=A=assisted breech, 8=B=breech extraction"
 171,OUTCOME,,"Outcome (L=liveborn and still living, N=neonatal death, A=antepartum stillbirth, I=intrapartum stillbirth, X=indeterminate stillbirth, Y=spontaneous abortion, Z=induced abortion)",Y,Label,,"Recode other than L, N, A, I, X, Y, Z to missing ",,OUTCOMCD,"0=L=liveborn and still living, 1=N=neonatal death, 2=A=antepartum stillbirth, 3=I=intrapartum stillbirth, 4=X=indeterminate stillbirth, 5=Y=spontaneous abortion, 6=Z=induced abortion"
 172,PLACEDL,,"Place of delivery (T=this hospital, I=in transit, H=home, O=other)",Y,Label,,"Recode other than T, I, H, O to missing ","N, Z",PLACEDCD,"0=T=this hospital, 1=I=in transit, 2=H=home, 3=O=other"
 173,REASCHG,,"Reason for change of place of delivery (C=change of address, U=unintentionally in labour, P=pregnancy - clinical reasons, L=labour - clinical reasons, O=other reasons - pregnancy, Z=other reasons - labour)",Y,Label,,"Recode other than C, U, P, L, O, Z to missing ","E, R",REASCHCD,"0=C=change of address, 1=U=unintentionally in labour, 2=P=pregnancy - clinical reasons, 3=L=labour - clinical reasons, 4=O=other reasons - pregnancy, 5=Z=other reasons - labour, 9=missing"
