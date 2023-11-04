@@ -3,6 +3,10 @@ def replace_missing_values(s, method):
 
     if method == 'NA':
         missing = s.isnull()
-        s[missing] = 'NA'    
+        s[missing] = 'NA'
+    
+    elif method == 'zero':
+        missing = s.isnull()
+        s[missing] = 0
 
     return s

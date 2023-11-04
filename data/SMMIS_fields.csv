@@ -18,7 +18,7 @@ Field #,Variable name,Base model,Description,"Used in preliminary data (Y=yes, N
 17,CATEGORY,,"Patient category (N=normal, P=private, A=amenity, O=overseas visitor)",Y,Label,,"Recode other than N, P, A, O to missing ",M,CATEGOCD,"0=N=normal, 1=P=private, 2=A=amenity, 3=O=overseas visitor, 9=missing"
 18,DISTRES,,District of residence,N,Label,,,,,
 19,MNHSNO,,Mother's NHS number,N,Label,,,,,
-20,ETHNIC,,"Mother's ethnic group (pre 1995) (C=Caucasian, A=Black African, W=Black Caribbean, I=Indo-Pakistani, O=Oriental, M=Mediterranean, Z=Other) (and combinations)",Y,Label,,,,ETHNIRCD,"0=C=Caucasian, 1=A=Black African, 2=W=Black Caribbean, 3=I=Indo-Pakistani, 4=O=Oriental, 5=M=Mediterranean, 6=Z=Other, 9=missing"
+20,ETHNIC,1,"Mother's ethnic group (pre 1995) (C=Caucasian, A=Black African, W=Black Caribbean, I=Indo-Pakistani, O=Oriental, M=Mediterranean, Z=Other) (and combinations)",Y,Label,,,,ETHNIRCD,"0=C=Caucasian, 1=A=Black African, 2=W=Black Caribbean, 3=I=Indo-Pakistani, 4=O=Oriental, 5=M=Mediterranean, 6=Z=Other, 9=missing"
 21,INTERP,,"Interpreter needed (Y=yes, N=no)",N,Label,,Recode W to missing,W,INTERPCD,"0=N=no, 1=Y=yes, 9=W=missing"
 22,SMOKING,,"Smoking habits (N=non smoker, L=light (1-9 per day), M=moderate (10-19 per day), H=heavy (20+ per day))",Y,Label,,"Recode other than N, L, M, H to missing ",,SMOKINCD,"0=N=non smoker, 1=L=light (1-9 per day), 2=M=moderate (10-19 per day), 3=H=heavy (20+ per day)"
 23,HISTDIA,,"History of diabetes (Y=yes, N=no)",Y,Label,,"Recode other than Y, N to missing ",,HISTDICD,"0=N=no, 1=Y=yes"
