@@ -1,5 +1,7 @@
 # To Do
 
+* Apgra distribution with/without CS
+
 * Fit with and without missing data (first fit with to select features)
 * Imputation: https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer
 * Fit with and without balanced data
